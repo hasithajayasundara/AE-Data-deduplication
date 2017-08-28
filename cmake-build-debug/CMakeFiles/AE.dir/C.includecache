@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hasitha/CLionProjects/AE/main.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+stdint.h
+-
+sha1.h
+/home/hasitha/CLionProjects/AE/sha1.h
+
+/home/hasitha/CLionProjects/AE/sha1.c
+sha1.h
+/home/hasitha/CLionProjects/AE/sha1.h
+
+/home/hasitha/CLionProjects/AE/sha1.h
+

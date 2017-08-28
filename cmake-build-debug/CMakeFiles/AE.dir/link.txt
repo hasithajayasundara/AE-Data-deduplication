@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/AE.dir/main.c.o CMakeFiles/AE.dir/sha1.c.o  -o AE 
