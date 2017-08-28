@@ -215,10 +215,7 @@ void SHA1ProcessMessageBlock(SHA1Context *context)
 }
 
 /**
- * @brief According to the standard, the message must be padded to an even
- *      512 bits.  The first padding bit must be a '1'.  The last 64
- *      bits represent the length of the original message.  All bits in
- *      between should be 0.  This function will pad the message
+ * @brief This function will pad the message
  *      according to those rules by filling the Message_Block array
  *      accordingly.  It will also call SHA1ProcessMessageBlock()
  *      appropriately.  When it returns, it can be assumed that the
@@ -227,12 +224,6 @@ void SHA1ProcessMessageBlock(SHA1Context *context)
  */
 void SHA1PadMessage(SHA1Context *context)
 {
-    /*
-     *  Check to see if the current message block is too small to hold
-     *  the initial padding bits and length.  If so, we will pad the
-     *  block, process it, and then continue padding into a second
-     *  block.
-     */
     if (context->Message_Block_Index > 55)
     {
         context->Message_Block[context->Message_Block_Index++] = 0x80;
