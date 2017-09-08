@@ -1,31 +1,22 @@
-#ifndef _SHA1_H_
-#define _SHA1_H_
+#ifndef SHA1_H
+#define SHA1_H
+#include <stddef.h>
 
-/*
- *  This structure will hold context information for the hashing
- *  operation
- */
-typedef struct SHA1Context
-{
-    unsigned Message_Digest[5];
+#define SHA1_BLOCK_SIZE 20              // SHA1 outputs a 20 byte digest
 
-    unsigned Length_Low;
-    unsigned Length_High;
+typedef unsigned char BYTE;             // 8-bit byte
+typedef unsigned int  WORD;             // 32-bit word, change to "long" for 16-bit machines
 
-    unsigned char Message_Block[64];
-    int Message_Block_Index;
+typedef struct {
+    BYTE data[64];
+    WORD datalen;
+    unsigned long long bitlen;
+    WORD state[5];
+    WORD k[4];
+} SHA1_CTX;
 
-    int Computed;
-    int Corrupted;
-} SHA1Context;
-
-/*
- *  Function Prototypes
- */
-void SHA1Reset(SHA1Context *);
-int SHA1Result(SHA1Context *);
-void SHA1Input( SHA1Context *,
-                const unsigned char *,
-                unsigned);
+void sha1_init(SHA1_CTX *ctx);
+void sha1_update(SHA1_CTX *ctx, const BYTE data[], size_t len);
+void sha1_final(SHA1_CTX *ctx, BYTE hash[]);
 
 #endif

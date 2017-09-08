@@ -52,9 +52,10 @@ int comp(unsigned char *i,unsigned char *max){
  */
 int main()
 {
-    SHA1Context sha;
+    SHA1_CTX ctx;
+    BYTE buf[SHA1_BLOCK_SIZE];
     int i;
-    FILE *fp = fopen ( "TestDataset" , "r" ); //TestDataset
+    FILE *fp = fopen ( "test2" , "r" ); //TestDataset
     fseek( fp , 0L , SEEK_END);
     long lSize = ftell( fp );
     rewind( fp );
@@ -70,21 +71,15 @@ int main()
     while(1){
         length = strlen(buffer);
         if(length < window_size + 8){
-            SHA1Reset(&sha);
-            SHA1Input(&sha,buffer,length);
-            for(i = 0; i < 5 ; i++) {
-                printf("%X ", sha.Message_Digest[i]);
-            }
-            printf("\n");
+            sha1_init(&ctx);
+            sha1_update(&ctx,buffer,length);
+            sha1_final(&ctx, buf);
             break;
         }
         boundary = chunk_data(buffer,length);
-        SHA1Reset(&sha);
-        SHA1Input(&sha,buffer,boundary+1);
-        for(i = 0; i < 5 ; i++) {
-            printf("%X ", sha.Message_Digest[i]);
-        }
-        printf("\n");
+        sha1_init(&ctx);
+        sha1_update(&ctx,buffer,length);
+        sha1_final(&ctx, buf);
         if(boundary == length){
             break;
         }
