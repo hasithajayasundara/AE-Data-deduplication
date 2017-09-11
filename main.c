@@ -6,7 +6,7 @@
 
 #define HASHSIZE 101
 #define MAX_CHUNK_SIZE 65536
-#define AVERAGE_CHUNK_SIZE 8192
+#define AVERAGE_CHUNK_SIZE 4096
 #define E 2.718281828
 
 //global variable list
@@ -189,8 +189,10 @@ int main()
     struct nlist *np;
 
     //Get the file
-    unsigned char *buffer1 = file("TestDataset");
-    unsigned char *buffer2 = file("test3");
+    unsigned char *buffer1 = file("test2");//DARPA99Week1-1
+    printf("Length and size of first data stream -%d %.2fMB\n",strlen(buffer1),strlen(buffer1)/1048576.0);
+    unsigned char *buffer2 = file("test4");//DARPA99Week1-2
+    printf("Length and size of second data stream -%d %.2fMB\n",strlen(buffer2),strlen(buffer2)/1048576.0);
 
     while(1){
         int length = strlen(buffer1);
@@ -215,6 +217,8 @@ int main()
         }
         buffer1 = buffer1 + boundary + 1;
     }
+    int duplicateContent = 0;
+    int count = 0;
     while(1){
         int length = strlen(buffer2);
         if(length < (windowSize + 8)){
@@ -223,7 +227,8 @@ int main()
             sha1Final(&ctx, buf);
             np = lookup(buf);
             if(np != NULL){
-                printf("%s\n",np->defn);
+                count++;
+                duplicateContent += strlen(np->defn);
             }
             break;
         }
@@ -237,13 +242,17 @@ int main()
         }
         np = lookup(buf);
         if(np != NULL){
-            printf("%s\n",np->defn);
+            count++;
+            duplicateContent += strlen(np->defn);
         }
-
         if(boundary == length){
             break;
         }
         buffer2 = buffer2 + boundary + 1;
     }
+    printf("Found %d duplicate contents.\n",count);
+    printf("Length of the duplicate content - %d.\n",duplicateContent);
+    printf("Size of the duplicate content - %d bytes.\n",duplicateContent);
+    printf("Total number of MB reduced %.2f.",(duplicateContent - count*20.0)/1048576.0);
     return 0;
 }
