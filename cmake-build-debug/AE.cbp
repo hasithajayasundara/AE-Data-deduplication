@@ -84,13 +84,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/hasitha/CLionProjects/AE/HashandStoreData/SHA1Hashing.c">
+			<Option target="AE"/>
+		</Unit>
+		<Unit filename="/home/hasitha/CLionProjects/AE/headers/SHA1Hashing.h">
+			<Option target="AE"/>
+		</Unit>
 		<Unit filename="/home/hasitha/CLionProjects/AE/main.c">
-			<Option target="AE"/>
-		</Unit>
-		<Unit filename="/home/hasitha/CLionProjects/AE/sha1.c">
-			<Option target="AE"/>
-		</Unit>
-		<Unit filename="/home/hasitha/CLionProjects/AE/sha1.h">
 			<Option target="AE"/>
 		</Unit>
 		<Unit filename="/home/hasitha/CLionProjects/AE/CMakeLists.txt">

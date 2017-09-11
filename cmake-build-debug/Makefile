@@ -123,6 +123,33 @@ AE/fast:
 	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/build
 .PHONY : AE/fast
 
+HashandStoreData/SHA1Hashing.o: HashandStoreData/SHA1Hashing.c.o
+
+.PHONY : HashandStoreData/SHA1Hashing.o
+
+# target to build an object file
+HashandStoreData/SHA1Hashing.c.o:
+	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/HashandStoreData/SHA1Hashing.c.o
+.PHONY : HashandStoreData/SHA1Hashing.c.o
+
+HashandStoreData/SHA1Hashing.i: HashandStoreData/SHA1Hashing.c.i
+
+.PHONY : HashandStoreData/SHA1Hashing.i
+
+# target to preprocess a source file
+HashandStoreData/SHA1Hashing.c.i:
+	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/HashandStoreData/SHA1Hashing.c.i
+.PHONY : HashandStoreData/SHA1Hashing.c.i
+
+HashandStoreData/SHA1Hashing.s: HashandStoreData/SHA1Hashing.c.s
+
+.PHONY : HashandStoreData/SHA1Hashing.s
+
+# target to generate assembly for a file
+HashandStoreData/SHA1Hashing.c.s:
+	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/HashandStoreData/SHA1Hashing.c.s
+.PHONY : HashandStoreData/SHA1Hashing.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,33 +177,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/main.c.s
 .PHONY : main.c.s
 
-sha1.o: sha1.c.o
-
-.PHONY : sha1.o
-
-# target to build an object file
-sha1.c.o:
-	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/sha1.c.o
-.PHONY : sha1.c.o
-
-sha1.i: sha1.c.i
-
-.PHONY : sha1.i
-
-# target to preprocess a source file
-sha1.c.i:
-	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/sha1.c.i
-.PHONY : sha1.c.i
-
-sha1.s: sha1.c.s
-
-.PHONY : sha1.s
-
-# target to generate assembly for a file
-sha1.c.s:
-	$(MAKE) -f CMakeFiles/AE.dir/build.make CMakeFiles/AE.dir/sha1.c.s
-.PHONY : sha1.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AE"
+	@echo "... HashandStoreData/SHA1Hashing.o"
+	@echo "... HashandStoreData/SHA1Hashing.i"
+	@echo "... HashandStoreData/SHA1Hashing.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... sha1.o"
-	@echo "... sha1.i"
-	@echo "... sha1.s"
 .PHONY : help
 
 

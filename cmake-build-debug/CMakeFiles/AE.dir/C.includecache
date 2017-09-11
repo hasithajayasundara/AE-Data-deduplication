@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/hasitha/CLionProjects/AE/HashandStoreData/SHA1Hashing.c
+stdlib.h
+-
+memory.h
+-
+stdio.h
+-
+../headers/SHA1Hashing.h
+/home/hasitha/CLionProjects/AE/headers/SHA1Hashing.h
+
+/home/hasitha/CLionProjects/AE/headers/SHA1Hashing.h
+stddef.h
+-
+
 /home/hasitha/CLionProjects/AE/main.c
 stdlib.h
 -
@@ -15,12 +29,6 @@ string.h
 -
 stdint.h
 -
-sha1.h
-/home/hasitha/CLionProjects/AE/sha1.h
-
-/home/hasitha/CLionProjects/AE/sha1.c
-sha1.h
-/home/hasitha/CLionProjects/AE/sha1.h
-
-/home/hasitha/CLionProjects/AE/sha1.h
+headers/SHA1Hashing.h
+/home/hasitha/CLionProjects/AE/headers/SHA1Hashing.h
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AE.dir/main.c.o"
-  "CMakeFiles/AE.dir/sha1.c.o"
+  "CMakeFiles/AE.dir/HashandStoreData/SHA1Hashing.c.o"
   "AE.pdb"
   "AE"
 )

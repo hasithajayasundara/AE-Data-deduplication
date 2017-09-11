@@ -189,9 +189,9 @@ int main()
     struct nlist *np;
 
     //Get the file
-    unsigned char *buffer1 = file("test2");//DARPA99Week1-1
+    unsigned char *buffer1 = file("DARPA99Week1-1");//DARPA99Week1-1
     printf("Length and size of first data stream -%d %.2fMB\n",strlen(buffer1),strlen(buffer1)/1048576.0);
-    unsigned char *buffer2 = file("test4");//DARPA99Week1-2
+    unsigned char *buffer2 = file("DARPA99Week1-2");//DARPA99Week1-2
     printf("Length and size of second data stream -%d %.2fMB\n",strlen(buffer2),strlen(buffer2)/1048576.0);
 
     while(1){
@@ -253,6 +253,7 @@ int main()
     printf("Found %d duplicate contents.\n",count);
     printf("Length of the duplicate content - %d.\n",duplicateContent);
     printf("Size of the duplicate content - %d bytes.\n",duplicateContent);
-    printf("Total number of MB reduced %.2f.",(duplicateContent - count*20.0)/1048576.0);
+    printf("Total number of MB reduced %.2f.\n",(duplicateContent - count*20.0)/1048576.0);
+    printf("Duplicates as a percentage %.2f.",(duplicateContent/strlen(buffer2))*100);
     return 0;
 }
