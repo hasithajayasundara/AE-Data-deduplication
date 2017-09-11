@@ -15,8 +15,9 @@ typedef struct {
     WORD k[4];
 } SHA1_CTX;
 
-void sha1_init(SHA1_CTX *ctx);
-void sha1_update(SHA1_CTX *ctx, const BYTE data[], size_t len);
-void sha1_final(SHA1_CTX *ctx, BYTE hash[]);
+//hashing functions
+void sha1Init(SHA1_CTX *ctx);
+void sha1Update(SHA1_CTX *ctx, const BYTE *data, size_t len);
+void sha1Final(SHA1_CTX *ctx, BYTE *hash);
 
 #endif
